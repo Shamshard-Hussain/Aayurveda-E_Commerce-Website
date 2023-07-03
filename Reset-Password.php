@@ -1,0 +1,146 @@
+<?php
+session_start();
+if ( isset( $_SESSION[ 'Rcode' ] ) and isset( $_SESSION[ 'Remail' ] ) ) {
+  include_once "connect.php";
+  $Remail = $_SESSION[ 'Remail' ];
+  $Rcode = $_SESSION[ 'Rcode' ];
+  echo $Rcode;
+ ?>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/Home.css" />
+<title>Aayurveda</title>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+<body>
+    <!-- Navigation Section Start -->
+        <div class="header">
+            <a href="/" class="logo"></a><img class="logo_img" src="./img/shapes/Final_Logo_PNG.webp"/>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+            <ul class="menu">
+    <li><a href="index.php#header">Home</a></li>
+    <li><a href="index.php#About">About</a></li>
+    <li><a href="index.php#Services">Services</a></li>
+    <li><a href="Product-list.php">Products</a></li>
+    <li><a href="index.php#Doctors">Doctors</a></li>
+    <li><a href="index.php#News">News</a></li>
+    <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </div>
+    <!-- Navigation Section End -->
+<main>
+ 
+ 
+ <div class="login-body">
+ <div class="login_container">
+        <div class="image_container">
+            <img src="img/pngwing.com.png" />
+        </div>
+        <div class="login_form_container">
+            <div class="Login-container">
+                <h3 class="login_h3">Reset Password</h3><br>
+            <form enctype="multipart/form-data" action="reset.php" method="post" >
+             <div class="input_container">
+                    <input class="login_input" type="email" name="email" value="<?php echo $Remail ?>" placeholder="Email" required readonly />
+                    <i class="fas fa-envelope"></i>
+                    <div class="border_animation"></div>
+                </div>
+              <div class="input_container">
+                    <input class="login_input" type="number" name="Code" min="0" placeholder="Code" required  title="Reset Password Code" />
+                    <i class="fas fa-envelope"></i>
+                    <div class="border_animation"></div>
+                </div>
+             
+                <div class="input_container">
+              <input class="login_input" type="password" placeholder="Password" name="password" pattern=".{7,}" title="Seven or more characters" required/>
+              <i class="fas fa-lock"></i>
+              <div class="border_animation"></div>
+            </div>
+            <div class="input_container">
+              <input class="login_input" type="password" placeholder="Confirm Password" name="cpassword" pattern=".{7,}" title="Seven or more characters" required/>
+              <i class="fas fa-lock"></i>
+              <div class="border_animation"></div>
+            </div>
+                <button class="login_btn">Reset</button> 
+             </form>
+              
+            </div>
+        </div>-
+    </div>
+ </div>
+ 
+ 
+ 
+ 
+ 
+
+<footer id="Contact">
+      <div class="main-Footer_content">
+        <div class="left box">
+          <h2>About us</h2>
+          <div class="Footer_content">
+            <p>Aayurveda is a traditional Hindu system of medicine (incorporated in Atharva Veda, the last of the four Vedas), which is based on the idea of balance in bodily systems and uses diet, herbal treatment, and yogic breathing.</p>
+          </div>
+        </div>
+
+        <div class="center box">
+          <h2>Address</h2>
+          <div class="Footer_content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text">Colombo 7, Sri Lanka</span>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text">01124562145</span>
+            </div>
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text">Aayurveda@email.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="right box">
+          <h2>Contact us</h2>
+          <div class="Footer_content">
+            <form action="feedback.php" method="post">
+              <div class="email">
+                <div class="text">Email *</div>
+                <input type="email" name="email" required>
+              </div>
+              <div class="msg">
+                <div class="text">Message *</div>
+                <textarea rows="2" cols="25" name="msg" required></textarea>
+              </div>
+              <div class="footer_btn">
+                <button type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <center>
+          <span class="credit">Created By <a href="#">Aayurveda.lk</a> | </span>
+          <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+        </center>
+      </div>
+    </footer>
+
+</main>
+</body>
+</html>
+<?php
+ 
+ 
+ 
+}else{
+ echo '<script>alert("Something went wrong!");window.location.href="Forget-Password.html";</script>';
+}
+ ?>
+

@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/Home.css" />
+<title>Aayurveda</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+<body>
+<!-- Navigation Section Start -->
+<div class="header"> <a href="/" class="logo"></a><img class="logo_img" src="./img/shapes/Final_Logo_PNG.webp"/>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+  <ul class="menu">
+    <li><a href="index.php#header">Home</a></li>
+    <li><a href="index.php#About">About</a></li>
+    <li><a href="index.php#Services">Services</a></li>
+    <li><a href="Product-list.php">Products</a></li>
+    <li><a href="index.php#Doctors">Doctors</a></li>
+    <li><a href="index.php#News">News</a></li>
+    <li><a href="#Contact">Contact</a></li>
+  </ul>
+</div>
+<!-- Navigation Section End -->
+ 
+<br><br> 
+<main>
+  <form enctype="multipart/form-data" action="registeration.php" method="post" spellcheck="true" >
+    <div class="login-body">
+      <div class="Registration_container">
+        <div class="image_container"> <img src="img/pngwing.com.png"/> </div>
+        <div class="login_form_container">
+          <div class="Login-container">
+            <h3 class="login_h3">Registration</h3>
+            <div class="input_container">
+              <input class="login_input" type="text" placeholder="First Name" name="fname" required pattern="[A-Za-z]+" title="Only letters are allowed." />
+              <i class="fa fa-user"></i>
+              <div class="border_animation"></div>
+            </div>
+            <div class="input_container">
+              <input class="login_input" type="text" name="lname" placeholder="Last Name" required pattern="[A-Za-z]+" title="Only letters are allowed."/>
+              <i class="fa fa-user"></i>
+              <div class="border_animation"></div>
+            </div>
+            <div class="input_container">
+              <input class="login_input" type="text" placeholder="Phone Number" name="phone" maxlength="9" pattern="[+ 0-9]{9}" title="Please Enter 9 digit number without 0" required />
+              <i class="fas fa-phone"></i>
+              <div class="border_animation"></div>
+            </div>
+            <div class="input_container">
+              <input class="login_input" type="text" placeholder="Date of Birth" name="dob" id="dob" required max="">
+              <i class="fas fa-calendar"></i>
+              <div class="border_animation"></div>
+            </div>
+           
+            <script>
+              document.getElementById("dob").addEventListener("click", function() {
+             // Show the date picker
+             this.type = "date";
+            // Set the max date to today's date
+              var today = new Date();
+                var maxDate = today.toISOString().slice(0,10);
+                this.max = maxDate;
+               });
+           </script>
+           
+            <div class="input_container"> <i class="fas fa-venus-mars"></i>
+              <select name="gender" class="login_input" required>
+                <option value="" >Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <div class="border_animation"></div>
+            </div>
+
+           
+            <div class="input_container">
+              <input class="login_input" type="text" placeholder="Home No" name="homeNo" pattern="[0-9]+(/[A-Za-z0-9]+)?" title="Enter a valid house number (e.g. 120/20, 120/20A, 120/A, 212, 12A)" required/>
+              <i class="fas fa-home"></i>
+              <div class="border_animation"></div>
+            </div>
+            <div class="input_container">
+              <input class="login_input" type="text" placeholder="Street Name" name="Sname" required pattern="[A-Za-z\s,]+" title="Only letters, spaces, and commas are allowed." />
+              <i class="fas fa-home"></i>
+              <div class="border_animation"></div>
+            </div>
+            <div class="input_container">
+              <input class="login_input" type="text" placeholder="City Name" name="cName"  pattern="[A-Za-z\s]+" title="Enter a valid city name (e.g. New York, Los Angeles)" required/>
+              <i class="fas fa-home"></i>
+              <div class="border_animation"></div>
+            </div>
+            <div class="input_container">
+              <input class="login_input" type="text" placeholder="Email Address" pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" name="email" title="Please enter valid email" required/>
+              <i class="fas fa-envelope"></i>
+              <div class="border_animation"></div>
+            </div>
+            <div class="input_container">
+              <input class="login_input" type="password" placeholder="Password" name="password" pattern=".{7,}" title="Seven or more characters" required/>
+              <i class="fas fa-lock"></i>
+              <div class="border_animation"></div>
+            </div>
+            <div class="input_container">
+              <input class="login_input" type="password" placeholder="Confirm Password" name="cpassword" pattern=".{7,}" title="Seven or more characters" required/>
+              <i class="fas fa-lock"></i>
+              <div class="border_animation"></div>
+            </div>
+            <button class="login_btn">Register</button>
+            <div class="create_new_account"> Already Have an Account ? <a href="Login.html">Sign in</a> </div>
+            <div class="create_new_account">Forgot Password? <a href="Forget-Password.html">Reset</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  
+ <footer id="Contact">
+      <div class="main-Footer_content">
+        <div class="left box">
+          <h2>About us</h2>
+          <div class="Footer_content">
+            <p>Aayurveda is a traditional Hindu system of medicine (incorporated in Atharva Veda, the last of the four Vedas), which is based on the idea of balance in bodily systems and uses diet, herbal treatment, and yogic breathing.</p>
+          </div>
+        </div>
+
+        <div class="center box">
+          <h2>Address</h2>
+          <div class="Footer_content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text">Colombo 7, Sri Lanka</span>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text">01124562145</span>
+            </div>
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text">Aayurveda@email.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="right box">
+          <h2>Contact us</h2>
+          <div class="Footer_content">
+            <form action="feedback.php" method="post">
+              <div class="email">
+                <div class="text">Email *</div>
+                <input type="email" name="email" required>
+              </div>
+              <div class="msg">
+                <div class="text">Message *</div>
+                <textarea rows="2" cols="25" name="msg" required></textarea>
+              </div>
+              <div class="footer_btn">
+                <button type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <center>
+          <span class="credit">Created By <a href="#">Aayurveda.lk</a> | </span>
+          <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+        </center>
+      </div>
+    </footer>
+</main>
+</body>
+</html>
